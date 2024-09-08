@@ -25,3 +25,21 @@ function determinePerformanceRating(averageSales) {
 
 }
 console.log(determinePerformanceRating);
+
+//Task 3: Create a Function to Identify Top and Bottom Performers
+
+function findtopandbottomperformers(employeeSales) {
+    let topPerformer = employeeSales [0];
+    let bottomPerformer = employeeSales [0];
+
+    for (let i =1; i <employeeSales.length; i++)
+        if(employeeSales[i].sales > topPerformer.sales)
+            topPerformer = employeeSales[i]
+        if (employeeSales[i].sales < bottomPerformer.sales)
+            bottomPerformer = employeeSales[i]
+
+    return {
+        topPerformer: topPerformer.findtopandbottomperformers
+        bottomPerformer:bottomPerformer.findtopandbottomperformers
+    }
+}
