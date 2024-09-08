@@ -1,3 +1,5 @@
+//Task 1: Create a function to calculate average sales
+
 function calculateAverageSales(sales) {
     if (sales.length === 0) {
         return 0;
@@ -8,3 +10,18 @@ function calculateAverageSales(sales) {
     }
     return sum / sales.length;
 }
+
+//Task 2: Create a Function to Determine Performance Rating
+
+function determinePerformanceRating(averageSales) {
+    if (averageSales > 10000) 
+        return "Excellent"
+    else if (averageSales >= 7000 && averageSales <= 10000)
+        return "Good";
+    else if (averageSales >= 4000 && averageSales < 7000)
+        return "Satisfactory";
+    else
+    return "Needs Improvement";
+
+}
+console.log(determinePerformanceRating);
