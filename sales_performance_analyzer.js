@@ -17,7 +17,7 @@ function calculateAverageSales(sales) {
 //function to return performance rating based on average sales
 function determinePerformanceRating(averageSales) {
     if (averageSales > 10000) 
-        return "Excellent"   // excellent for sales above 10,000
+        return "Excellent";   // excellent for sales above 10,000
     else if (averageSales >= 7000 && averageSales <= 10000)
         return "Good";    // Good for sales between 4,000 and 7000
     else if (averageSales >= 4000 && averageSales < 7000)
@@ -26,7 +26,7 @@ function determinePerformanceRating(averageSales) {
     return "Needs Improvement"; //Needs improvement for any sales below 4k
 
 }
-console.log(determinePerformanceRating); //looged the performce rating
+
 
 //Task 3: Create a Function to Identify Top and Bottom Performers
 //function to find top and bottom performers based on total sales
@@ -41,8 +41,8 @@ function findtopandbottomperformers(employeeSales) {
             bottomPerformer = employeeSales[i]
 
     return {
-        topPerformer: topPerformer.findtopandbottomperformers
-        bottomPerformer:bottomPerformer.findtopandbottomperformers
+        topPerformer: topPerformer.name
+        bottomPerformer:bottomPerformer.name
     }
 }
 
@@ -50,23 +50,23 @@ function findtopandbottomperformers(employeeSales) {
 //function to generate report
 
 function generateperformancereport(employeeSales) {
-    let report = []
+    let report = [];
 
     for(let i = 0; i < salesData.length; i++){
-        let average = calculateAverageSales(employeeSales[i].sales) //calculates average sale for each salesperson
-        let rating = determinePerformanceRating(average) //determines performance rating based on average sales
+        let average = calculateAverageSales(employeeSales[i].sales); //calculates average sale for each salesperson
+        let rating = determinePerformanceRating(average); //determines performance rating based on average sales
 
         report.push({
             name: employeeSales[i].name,
             averageSales: average,
-            determinePerformanceRating: rating
-        }) // adds the sales persons data to the report
+            PerformanceRating: rating
+        }); // adds the sales persons data to the report
     }
-    let topandbottom = findtopandbottomperformers(employeeSales) //get the top and bottom performers
-    report.topPerformer = topandbottom.topPerformer //adds top performer
-    report.bottomPerformer = topandbottom.bottomPerformer //adds bottom performer
+    let topandbottom = findtopandbottomperformers(employeeSales); //get the top and bottom performers
+    report.topPerformer = topandbottom.topPerformer; //adds top performer
+    report.bottomPerformer = topandbottom.bottomPerformer; //adds bottom performer
 
-    return report  //returns the final report
+    return report;  //returns the final report
 }
 
 //Task 5: Test Functions with Sample Data
@@ -78,5 +78,5 @@ const salesData = [
     {name: 'Diana' , sales: [9000, 8500, 9200] },
 ];
 //testing function and logging the result
-let performancereport = generateperformancereport(employeeSales)
+let performancereport = generateperformancereport(salesData)
 console.log(performancereport);
